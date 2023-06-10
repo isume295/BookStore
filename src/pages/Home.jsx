@@ -1,5 +1,4 @@
 import React from 'react';
-// import BookItem from '../components/BookItem';
 import BookList from '../components/BookList';
 import AddBook from '../components/AddBook';
 

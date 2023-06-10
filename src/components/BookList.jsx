@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React, { useState } from 'react';
 import { styled } from 'styled-components';
 import BookItem from './BookItem';
