@@ -1,7 +1,10 @@
 import React from 'react';
 import { styled } from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/booksSlice';
 
 export default function BookItem({ list }) {
+  const dispatch = useDispatch();
   return (
     <Div>
       <div className="book-detail">
@@ -13,7 +16,7 @@ export default function BookItem({ list }) {
         <div className="interactions">
           <button type="button">Comment</button>
           <div className="line" />
-          <button type="button">Remove</button>
+          <button type="button" onClick={() => dispatch(removeBook(list.id))}>Remove</button>
           <div className="line" />
           <button type="button">Edit</button>
         </div>
