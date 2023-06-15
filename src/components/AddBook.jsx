@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { styled } from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/booksSlice';
 
 export default function AddBook() {
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const id = `item${Math.random()}`;
+    dispatch(addBook({ id, title, author }));
+    setTitle('');
+    setAuthor('');
+  };
+
   return (
     <Div>
       <span className="title">ADD NEW BOOK</span>
-      <form action="">
-        <input className="input-title" type="text" placeholder="Book title" />
-        <input className="input-author" type="text" placeholder="Book author" />
+      <form action="" onSubmit={handleSubmit}>
+        <input className="input-title" type="text" placeholder="Book title" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <input className="input-author" type="text" placeholder="Book author" value={author} onChange={(e) => setAuthor(e.target.value)} />
         <button className="add-btn" type="submit">Add Book</button>
       </form>
     </Div>
