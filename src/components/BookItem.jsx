@@ -1,10 +1,15 @@
 import React from 'react';
 import { styled } from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
+import { getBooks, removeBook } from '../redux/books/booksSlice';
 
 export default function BookItem({ list }) {
   const dispatch = useDispatch();
+
+  const handleRemove = async (id) => {
+    await dispatch(removeBook(id));
+    await dispatch(getBooks());
+  };
   return (
     <Div>
       <div className="book-detail">
@@ -16,7 +21,12 @@ export default function BookItem({ list }) {
         <div className="interactions">
           <button type="button">Comment</button>
           <div className="line" />
-          <button type="button" onClick={() => dispatch(removeBook(list.id))}>Remove</button>
+          <button
+            type="button"
+            onClick={() => handleRemove(list.item_id)}
+          >
+            Remove
+          </button>
           <div className="line" />
           <button type="button">Edit</button>
         </div>
@@ -66,7 +76,6 @@ align-items: center;
     }
    .interactions {
     display: flex;
-    /* gap: 10px; */
     .line{
         width: 0.125rem;
         height: 1.5rem;
