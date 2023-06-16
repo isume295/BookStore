@@ -1,17 +1,22 @@
+/* eslint-disable camelcase */
 import React, { useState } from 'react';
 import { styled } from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import { addBook, getBooks } from '../redux/books/booksSlice';
 
 export default function AddBook() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [category] = useState('non-fiction');
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const id = `item${Math.random()}`;
-    dispatch(addBook({ id, title, author }));
+    const item_id = `item${Math.random()}`;
+    await dispatch(addBook({
+      item_id, title, author, category,
+    }));
+    await dispatch(getBooks());
     setTitle('');
     setAuthor('');
   };
