@@ -103,14 +103,13 @@ Example commands:
 
 ```sh
   cd my-folder
-  git clone https://github.com/isume295/react-to-do-list
-```
+  git clone https://github.com/isume295/BookStore
 
 using Ubuntu:
 
 ```sh
   cd my-desired-folder
-  git clone https://github.com/isume295/react-to-do-list
+  git clone https://github.com/isume295/BookStore
 ```
 
 For more information on how to clone or fork a repository:
