@@ -3,10 +3,11 @@ import React, { useState } from 'react';
 import { styled } from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { addBook, getBooks } from '../redux/books/booksSlice';
+import Category from './Category';
 
 export default function AddBook() {
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [author] = useState('sumeya');
   const [category] = useState('non-fiction');
   const dispatch = useDispatch();
 
@@ -18,7 +19,7 @@ export default function AddBook() {
     }));
     await dispatch(getBooks());
     setTitle('');
-    setAuthor('');
+    // setAuthor('');
   };
 
   return (
@@ -26,7 +27,7 @@ export default function AddBook() {
       <span className="title">ADD NEW BOOK</span>
       <form action="" onSubmit={handleSubmit}>
         <input className="input-title" type="text" placeholder="Book title" value={title} onChange={(e) => setTitle(e.target.value)} />
-        <input className="input-author" type="text" placeholder="Book author" value={author} onChange={(e) => setAuthor(e.target.value)} />
+        <div className="input-author"><Category /></div>
         <button className="add-btn" type="submit">Add Book</button>
       </form>
     </Div>
@@ -42,7 +43,6 @@ flex-direction: column;
 gap: 1rem;
 
 .title {
-    font-family: Montserrat;
     font-size: 1.25rem;
     font-weight: bold;
     letter-spacing: -0.18px;
@@ -59,7 +59,6 @@ form{
         border: 1px solid rgba(136, 136, 136, 0.5);
         border-radius: 4px;
         background-color: rgb(255, 255, 255);   
-        font-family: Montserrat;
         font-size: 1rem; 
         letter-spacing: -0.15px;
     }
@@ -72,7 +71,7 @@ form{
     }
     button{
         width: 20%;
-        font-family: RobotoSlab;
+        font-family: Montserrat;
         font-size: 0.813rem;
         font-weight: bold;
         letter-spacing: 0.5px;
