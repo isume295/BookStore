@@ -67,21 +67,18 @@ align-items: center;
         display: flex;
         flex-direction: column;
       .category {
-        font-family: Montserrat;
         font-size: 0.875rem;
         font-weight: bold;
         opacity: 0.5;
         color: #121212;
       }
       .title{
-        font-family: RobotoSlab;
         font-size: 1.375rem;
         font-weight: bold;
         letter-spacing: -0.2px;
         color: #121212;
       }
       .author{
-        font-family: RobotoSlab;
         font-size: 0.875rem;
         font-weight: 300;
         color: #4386bf;
@@ -100,7 +97,6 @@ align-items: center;
       color: #4386bf;
       border: none;
       padding-right: 10px;
-      font-family: RobotoSlab;
       font-size: 0.875rem;
       font-weight: 300;
     }
@@ -124,23 +120,20 @@ align-items: center;
       .bar-detail{
         display: flex;
         flex-direction: column;
-        .percent-number{
-         font-family: Montserrat;
+        .percent-number{ 
          font-size: 2.5rem;
          color: #121212;
         }
         .completed{
           width: 5rem;
          opacity: 0.5;
-        font-family: Montserrat;
-        font-size: 1.3rem;
+        font-size: 1rem;
         color: #121212;
         }
       }
     }
      .chapter{
     opacity: 0.5;
-    font-family: RobotoSlab;
     font-size: 1rem;
     font-weight: 300;
     font-stretch: normal;
@@ -155,7 +148,6 @@ align-items: center;
      }
      button{
         width: 100%;
-        font-family: RobotoSlab;
         padding: 8px 0;
         font-size: 0.813rem;
         letter-spacing: 0.5px;
@@ -163,11 +155,7 @@ align-items: center;
         background-color: #0290ff;
         border-radius: 3px;
         border: solid 1px #0290ff;
-        font-weight: 300;
-  
- 
- 
- 
+        font-weight: 300; 
     }
    }
 
